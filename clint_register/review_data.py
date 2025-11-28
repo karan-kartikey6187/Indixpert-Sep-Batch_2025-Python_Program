@@ -17,7 +17,7 @@ def review(data):
         choice=int(input("Enter Your Choice: "))
         if choice==1:
             clint_all_data.append(data)
-            print(json.dumps(clint_all_data,indent=5))
+            print(json.dumps(clint_all_data,indent=3))
             print("Submitted Successfully.")
             break
         elif choice==2:
