@@ -1,5 +1,4 @@
 def register_student():
-    all_student_Data=[]
     studentdict={}
     number_of_qulification=1
     print("\n>>>>>>>>>>>>>>>>}~Registration-Details~{<<<<<<<<<<<<<<<")
