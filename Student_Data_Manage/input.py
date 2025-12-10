@@ -34,7 +34,4 @@ def input_contact_delete():
             return input_contact_delete()
     except:
         print("Enter Only Number Not Character.")
-        return input_contact_delete() 
-
-
-     
+        return input_contact_delete()      

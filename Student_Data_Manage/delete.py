@@ -5,7 +5,7 @@ def delete_opration(json_file, students_data):
     if len(students_data)>0:    
         while True:
             print(">>>>>>>>>>>>>>Delete Menu<<<<<<<<<<<<<<")
-            print("1. Delete By Name.")
+            print("1. Delete By ID.")
             print("2. Delete By Contact.")
             print("3. Back.")
 
@@ -21,9 +21,9 @@ def delete_opration(json_file, students_data):
 
             if choice == 1:
                 i=0    
-                delete_name = input("Please Enter Name: ")                    
+                delete_id = input("Please Enter ID: ")                    
                 while i < len(students_data):
-                    if students_data[i]["name"].lower() == delete_name.lower():
+                    if students_data[i]["id"].lower() == delete_id.lower():
                         students_data.pop(i)
                         found = True
                     else:
@@ -41,7 +41,7 @@ def delete_opration(json_file, students_data):
                         found = True
                     else:
                         i += 1
-                write_json(json_file, students_data) 
+                write_json(json_file, students_data)    
 
             elif choice == 3:
                 return

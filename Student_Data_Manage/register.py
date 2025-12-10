@@ -1,5 +1,6 @@
 
 import uuid
+
 def register_opration(student_data):
     print("\n>>>>>>>>>> Registration Details <<<<<<<<<<")
 
@@ -9,16 +10,28 @@ def register_opration(student_data):
     student["address"] = input("Please Enter Your Address: ")
 
     while True:
-        try: 
-            contact =int(input("Please Enter Your Contact: "))
-            if len(str(contact)) == 10:
-                student["contact"] = contact
-                break
-            else:
+        try:
+            contact = int(input("Please Enter Your Contact: "))
+
+            if len(str(contact)) != 10:
                 print("Invalid contact! Enter 10 digit number.")
-        except:
-            print("Enter Only Number Not Character.")        
+                continue
 
-    student_data.append(student) 
+            duplicate = False
+            for data in student_data:
+                if data["contact"] == contact:
+                    print("This Number Already Registered. Enter Another Number.")
+                    duplicate = True
+                    break
 
-    print("Registration Successful")
+            if duplicate:
+                continue  
+
+            student["contact"] = contact
+            break 
+
+        except ValueError:
+            print("Enter Only Number Not Character.")
+
+    student_data.append(student)
+    print("Registration Successful.")

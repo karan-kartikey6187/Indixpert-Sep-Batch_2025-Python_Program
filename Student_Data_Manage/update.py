@@ -6,18 +6,17 @@ def update_opration(json_file, data):
     if len(data)>0:    
         while True:
             print(">>>>>>>>>Update Menu<<<<<<<<<")
-            name = input("Please Enter Name: ")
+            id = input("Please Enter ID: ")
             found = False
 
             for user in data:
-                if user["name"].lower() == name.lower(): 
+                if user["id"].lower() == id.lower(): 
                     print(json.dumps(user, indent=4))
                     found = True
                     
                     print("1. Update Name")
                     print("2. Update Address")
-                    print("3. Update Contact")
-                    print("4. Back")
+                    print("3. Back")
 
                     choice = input("Enter Your Choice: ")
 
@@ -38,16 +37,11 @@ def update_opration(json_file, data):
                         print("Address Updated Successfully.")
 
                     elif choice == 3:
-                        user["contact"] = input_contact_update()
-                        write_json(json_file, data)
-                        print("Contact Updated Successfully.")
-
-                    elif choice == 4:
                         return
 
                     return 
 
             if not found:
-                print("Name Not Found.")
+                print("ID Not Found.")
     else: 
         print("\nSorry! No Data Avliable For Update") 
