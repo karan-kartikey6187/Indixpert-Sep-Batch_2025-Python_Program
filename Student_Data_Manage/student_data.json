@@ -1,1 +1,14 @@
-[]
+[
+    {
+        "id": "0d0f17",
+        "name": "karan",
+        "address": "fds",
+        "contact": 4534345434
+    },
+    {
+        "id": "ade1d0",
+        "name": "aftab alam",
+        "address": "sfd",
+        "contact": 4567545645
+    }
+]
