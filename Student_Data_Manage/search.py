@@ -1,0 +1,55 @@
+import json
+from Student_Data_Manage.input import input_contact
+
+def search_opration(students_data):
+    while True: 
+        print(">>>>>>>>>>Search<<<<<<<<<<<")     
+        print("1.Search By Name")
+        print("2.Search By Address")
+        print("3.Search By Contact")
+        print("4.Back")
+
+        choice = input("Please Enter Your Choice: ")
+
+        if choice.isdigit(): 
+            choice = int(choice)
+        else:
+            print("Enter Only Number, Not Character.")  
+
+        if choice==1:    
+            search_name=input("Please Enter Name: ")                    
+            found=False
+            for data in students_data:
+                if data["name"].lower()==search_name.lower():
+                    print(json.dumps(data,indent=4))
+                    found=True
+            if not found:
+                print("Name not Found")
+
+        elif choice==2:    
+            search_address=input("Please Enter Address: ")                    
+            found=False
+            for data in students_data:
+                if data["address"].lower()==search_address.lower():
+                    print(json.dumps(data,indent=4))
+                    found=True
+            if not found:
+                print("Address not Found")        
+
+        elif choice==3:    
+            search_contact=input_contact()                     
+            found=False
+            for data in students_data:
+                if data["contact"]==search_contact:
+                    print(json.dumps(data,indent=4))
+                    found=True
+            if not found:
+                print("Contact not Found")
+
+        elif choice==4:
+            break  
+
+        else:
+            print("Enter The Number Between(1-4).")     
+
+                
